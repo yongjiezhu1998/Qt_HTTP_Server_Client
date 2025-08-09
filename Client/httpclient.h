@@ -29,9 +29,11 @@ public:
 private:
      Ui::HttpClient *ui;
     QNetworkAccessManager *manager;
+    QString filePath;
 private slots:
     void login( );
     void downloadFile( );
-    void uploadScore( );
+    void uploadScore(QString filePath);
+    void on_pushButton_address_clicked();
 };
 #endif // HTTPCLIENT_H
