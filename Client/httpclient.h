@@ -1,0 +1,37 @@
+//HttpClient.h
+#ifndef HTTPCLIENT_H
+#define HTTPCLIENT_H
+
+#include <QMainWindow>
+#include<QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QUrl>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QFile>
+#include <QDebug>
+#include <QPushButton>
+
+QT_BEGIN_NAMESPACE
+namespace Ui {
+class HttpClient;
+}
+QT_END_NAMESPACE
+
+class HttpClient : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    HttpClient(QWidget *parent = nullptr);
+    ~HttpClient();
+private:
+     Ui::HttpClient *ui;
+    QNetworkAccessManager *manager;
+private slots:
+    void login( );
+    void downloadFile( );
+    void uploadScore( );
+};
+#endif // HTTPCLIENT_H
